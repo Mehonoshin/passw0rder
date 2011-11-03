@@ -1,0 +1,62 @@
+<html>
+
+<head>
+
+<style>
+	body {
+		margin: 0;
+	}
+
+	.helloText {
+		font: 24px "Lucida Grande";
+		background-color: transparent;
+		border: none;
+		outline: none;
+		font-weight: bold;
+		color: white;
+		text-align: center;
+		position: absolute;
+		top: 41px;
+		left: 18px;
+		width: 180px;		
+	}
+	#next {
+		background-color: transparent;
+		border: 1px solid #D49A81;
+		color: #D4AC9B;
+		position: absolute;
+		top: 76px;
+		left: 50px;
+		width: 100px;				
+	}
+</style>
+
+<script>
+	function randomPassword(length) {
+	   chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+	   pass = "";
+	   for(x = 0; x < length; x++) {
+	      i = Math.floor(Math.random() * 62);
+	      pass += chars.charAt(i);
+	   }
+	   return pass;
+	}
+
+	function getRandPass() {
+		document.getElementById('pass-place').innerHTML = randomPassword(8);
+	}
+	
+</script>
+
+</head>
+
+<body onload="getRandPass();">
+		
+		<img src="Default.png">
+		
+		<textarea id="pass-place" class="helloText">Hello, World!</textarea>
+		<button id="next" onclick="getRandPass();">Next</button>
+
+</body>
+
+</html>
